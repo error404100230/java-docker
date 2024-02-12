@@ -1,5 +1,10 @@
 FROM docker.io/library/openjdk:8-jdk-alpine
-COPY ./build/libs/nasapicture-0.0.1-SNAPSHOT.war /usr/app/
-WORKDIR /usr/app
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the application JAR file into the container
+COPY target/my-application.jar .
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "nasapicture-0.0.1-SNAPSHOT.war"]
+# Command to run the application
+CMD ["java", "-jar", "my-application.jar"]
