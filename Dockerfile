@@ -1,4 +1,5 @@
-FROM openjdk:8u181
-ADD target/docker-example-0.0.1-SNAPSHOT.jar /opt/docker-example-0.0.1-SNAPSHOT.jar
+FROM java:8-jdk-alpine
+COPY ./build/libs/nasapicture-0.0.1-SNAPSHOT.war /var/java-mp/
+WORKDIR  /var/java-mp/
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/opt/docker-example-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "nasapicture-0.0.1-SNAPSHOT.war"]
