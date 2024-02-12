@@ -2,7 +2,7 @@ version: '3.5'
  
 services:
             
-  service-php:
+  service-java:
     image: ${USERHUB}/${ARTIFACT}:${NUMBER}
     ports:
       - 6006:8080
