@@ -1,10 +1,4 @@
-FROM docker.io/library/openjdk:8-jdk-alpine
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the application JAR file into the container
-COPY target/my-application.jar .
+FROM openjdk:8u181
+ADD target/docker-example-0.0.1-SNAPSHOT.jar /opt/docker-example-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-# Command to run the application
-CMD ["java", "-jar", "my-application.jar"]
+ENTRYPOINT ["java","-jar","/opt/docker-example-0.0.1-SNAPSHOT.jar"]
