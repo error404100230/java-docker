@@ -15,7 +15,6 @@ public class NasaPictureController {
 
     @GetMapping("/")
     public String showTodaysPicture(ModelMap model) {
-        model.addAttribute("picture", service.getTodayPicture());
         return "picture";
     }
 }
