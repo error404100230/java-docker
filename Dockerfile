@@ -1,4 +1,4 @@
-FROM docker.io/library/gradle:6.7-jdk8 AS build
+FROM  --platform=linux/amd64 docker.io/library/gradle:6.7-jdk8 AS build
 RUN mkdir -p /workspace
 WORKDIR /workspace
 COPY . /workspace
